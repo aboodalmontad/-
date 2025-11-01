@@ -1,0 +1,5 @@
+{
+  "name": "AI Data Analysis Agent",
+  "description": "An AI-powered agent for data analysis. Provide your data and ask questions to get insights instantly.",
+  "requestFramePermissions": []
+}
