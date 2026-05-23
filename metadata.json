@@ -1,0 +1,6 @@
+{
+  "name": "مراقب عادات التبول",
+  "description": "تطبيق متكامل لتسجيل ومراقبة عادات التبول وتحليل أسباب التبول المتكرر وتقديم تقارير دورية مع تنبيهات صحية ذكية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
