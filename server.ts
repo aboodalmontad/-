@@ -8,13 +8,16 @@ import { initialLogs, initialWaterLogs } from "./src/data";
 
 dotenv.config();
 
-const app = express();
+export const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
 // --- Database Configuration & Local persistent Storage ---
-const DB_PATH = path.join(process.cwd(), "local_database.json");
+// Support Vercel serverless read/write filesystem capability using the writable ephemeral /tmp folder
+const DB_PATH = process.env.VERCEL
+  ? path.join("/tmp", "local_database.json")
+  : path.join(process.cwd(), "local_database.json");
 
 const defaultMedicalProfile = {
   age: 30,
@@ -335,4 +338,9 @@ async function startServer() {
   });
 }
 
-startServer();
+// Export default app for serverless platforms like Vercel
+export default app;
+
+if (process.env.VERCEL !== "1") {
+  startServer();
+}
